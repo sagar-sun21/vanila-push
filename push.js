@@ -1,10 +1,11 @@
 var push = require('web-push');
 
 let vapidKeys = {
-    publicKey: 'BF3AisMNRxtLPhamBOs_a12eRmnaEb2Shhby2IscxI77SuBlAJziM4_G49jer_lnw6ohwQTi7gA7HXfv6YrBmqc',
-    privateKey: '09_TFssjHGjnura5CtmxB3iJqidDantvb6tV9Iiz96Q'
+    publicKey: 'BJ8ceJeNaNjwC0u50NsMwsnyPyXl69y_6Lbqr6lESxWZmDVSSK3K1_q4WsdldKvedArVGdtujm0vlvLe-EWDfeI',
+    privateKey: 'RA-HB1zpLVeREVDdbOfLmfh3wzQ5fuzlK_Hb3RXdu1o'
   };
-// let vapidKeys = push.generateVAPIDKeys();
+//let vapidKeys = push.generateVAPIDKeys();
+//console.log(vapidKeys);
 
 push.setVapidDetails('mailto:shuvashishpaul64@gmail.com',vapidKeys.publicKey, vapidKeys.privateKey);
 
@@ -18,4 +19,3 @@ let sub = {
 
 push.sendNotification(sub,'test message');
 
-// console.log(vapidKeys);
