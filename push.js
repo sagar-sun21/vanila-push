@@ -8,7 +8,13 @@ let vapidKeys = {
 
 push.setVapidDetails('mailto:shuvashishpaul64@gmail.com',vapidKeys.publicKey, vapidKeys.privateKey);
 
-let sub = {"endpoint":"https://updates.push.services.mozilla.com/wpush/v2/gAAAAABhO…ltok63lRPSWQB044SOJn4p0IvFzoOpXg3_k3lXh4nF4ATZTelH9_yfr7KHTw","keys":{"auth":"PhKMNXmAVHwdv8q2duafUQ","p256dh":"BBn1_O8LqHCj28eYWP2j_v9R6DdLvgxCEfjNOfvcj6c5D-Y1V521AmdYN4yQ9pSVPKz6It8UI6DSErUzIS2E2Vs"}};
+let sub = {
+    endpoint:'https://fcm.googleapis.com/fcm/send/dkfKfONdJHE:APA91bH53aWNvjNKAhTtJxuU4WrHF0fcseNxB-GwSoTqxnRgnROtWJBO2XP4HEdA-FSMbrLPfNRaifJ1DeM_Zg86PBpJbxrVidaXPh2_v_srUn-0I9EpN2LfbpHgCTQSkYxFRgjByrx0',
+    expirationTime:null,
+    keys:{
+        p256dh:'BECVcz72gTLAua_bPj7UcEZ2z23Wljxxg9scpPD9uHbAQpAZlgguxnusWUU_XPt4Mutatr3elfXLJRzavFo_2lw',
+        auth:'OfFXipCIY_ntxHdxBZETzQ'
+    }};
 
 push.sendNotification(sub,'test message');
 
