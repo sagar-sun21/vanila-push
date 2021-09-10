@@ -8,6 +8,7 @@
   </head>
   <body>
     <button onclick="subscribe()">Subscribe</button>
+    <div id="check"></div>
     <script>
       addEventListener("load", async () => {
         let sw = await navigator.serviceWorker.register("./sw.js");
@@ -22,6 +23,7 @@
             "BGLLkYqXZ560JeDiUq_Oa4Jx3nIMkX6sqN22B_O2hHc8o5AM0M9R89FyWBn4n4pijlrLoNWQFoic6Ad2HmwhK2A",
         });
         console.log(JSON.stringify(push));
+        document.getElementById("check").innerHTML = JSON.stringify(push);
       }
     </script>
   </body>
