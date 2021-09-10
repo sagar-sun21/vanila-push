@@ -1,39 +1,11 @@
-let cacheData = "appV1";
-this.addEventListener("install", (event) => {
-    event.waitUntil(
-        caches.open(cacheData).then((cache) => {
-            cache.addAll([
-                "/index.html",
-            ])
-        })
-    )
-});
-
-this.addEventListener("fetch", (event) => {
-    if (!navigator.onLine) {
-        this.registration.showNotification("Offline", {
-                    body: "No internet connection.",
-    })
-        event.respondWith(
-            caches.match(event.request).then((resp) => {
-                if (resp) {
-                    return resp;
-                }
-                let requestURL = event.request.clone();
-                fetch(requestURL);
-            })
-        )
-    }
-})
-
-self.addEventListener('push', event => {
-    const options = {
+self.addEventListener('push', function(e) {
+    var options = {
       body: 'This notification was generated from a push!',
       icon: 'images/notification-flat.png',
       vibrate: [100, 50, 100],
       data: {
         dateOfArrival: Date.now(),
-        primaryKey: 1
+        primaryKey: '2'
       },
       actions: [
         {action: 'explore', title: 'Go to the site',
@@ -43,7 +15,7 @@ self.addEventListener('push', event => {
       ]
     };
   
-    event.waitUntil(
+    e.waitUntil(
       self.registration.showNotification('Push Notification', options)
     );
   });
