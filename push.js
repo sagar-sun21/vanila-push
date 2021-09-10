@@ -1,11 +1,11 @@
 var push = require('web-push');
 
 let vapidKeys = {
-    publicKey: 'BJ8ceJeNaNjwC0u50NsMwsnyPyXl69y_6Lbqr6lESxWZmDVSSK3K1_q4WsdldKvedArVGdtujm0vlvLe-EWDfeI',
-    privateKey: 'RA-HB1zpLVeREVDdbOfLmfh3wzQ5fuzlK_Hb3RXdu1o'
+    publicKey: 'BD-FxZKjwGjo4Q_Gj9ZKSZJZ2hp-Y55BO-XLRrRJnBZ51VAcO0i0nYj5RIJx2yezN32uR6PaWGRkXhj1XKQfG2E',
+    privateKey: 'O_ktuWwZs8uzTrLyG41slp1AI8X4sYQhBF1K2K8xOmI'
   };
-//let vapidKeys = push.generateVAPIDKeys();
-//console.log(vapidKeys);
+// let vapidKeys = push.generateVAPIDKeys();
+// console.log(vapidKeys);
 
 push.setVapidDetails('mailto:shuvashishpaul64@gmail.com',vapidKeys.publicKey, vapidKeys.privateKey);
 
